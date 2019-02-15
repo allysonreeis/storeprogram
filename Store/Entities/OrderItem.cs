@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Store.Entities
+﻿namespace Store.Entities
 {
     class OrderItem
     {
