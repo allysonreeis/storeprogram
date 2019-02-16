@@ -26,5 +26,15 @@ namespace Store.Entities
         {
             Items.Remove(item);
         }
+
+        public double Total ()
+        {
+            double totalValue = 0;
+            foreach (var value in Items)
+            {
+                 totalValue += value.Price;
+            }
+            return totalValue;
+        }
     }
 }
