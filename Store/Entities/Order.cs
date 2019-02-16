@@ -16,5 +16,15 @@ namespace Store.Entities
             Status = status;
             Items = items;
         }
+
+        public void AddItem (OrderItem item)
+        {
+            Items.Add(item);
+        }
+
+        public void RemoveItem (OrderItem item)
+        {
+            Items.Remove(item);
+        }
     }
 }
