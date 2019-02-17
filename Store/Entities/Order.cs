@@ -1,6 +1,7 @@
 ﻿using System;
 using Store.Entities.Enums;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Store.Entities
 {
@@ -49,6 +50,22 @@ namespace Store.Entities
                  totalValue += (value.Price * value.Quantity);
             }
             return totalValue;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("ORDER SUMMARY:");
+            sb.AppendLine("Order moment: " + Moment);
+            sb.AppendLine("Order status: " + Status);
+            sb.AppendLine("Client: " + Client.Name + ", Birth Date: " + Client.Date.ToShortDateString() );
+            sb.AppendLine("Order items: ");
+            foreach (OrderItem item in Items)
+            {
+                sb.AppendLine(item.Product.Name + ", $" + item.Product.Price + " Quantity: " + item.Quantity + ", Subtotal: $" + item.subTotal());
+            }
+            sb.AppendLine("Total price: $" + Total());
+            return sb.ToString();
         }
     }
 }

@@ -42,17 +42,7 @@ namespace Store
                 order.AddItem(orderItem);
             }
 
-            Console.WriteLine("ORDER SUMMARY:");
-            Console.WriteLine("Order moment: " + order.Moment);
-            Console.WriteLine("Order status: " + order.Status);
-            Console.WriteLine("Client: " + order.Client.Name);
-            Console.WriteLine("Order items: ");
-            foreach (OrderItem value in order.Items)
-            {
-                Console.WriteLine(value.Product.Name + ", " + "$" + value.Product.Price + " Quantity: " + value.Quantity + ", Subtotal: $" + value.subTotal());
-            }
-            Console.WriteLine("Total price: " + order.Total());
-
+            Console.WriteLine(order);
         }
     }
 }
