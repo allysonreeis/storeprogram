@@ -14,21 +14,10 @@ namespace Store.Entities
 
         public Order() { }
 
-        public Order(DateTime moment, OrderStatus status)
+        public Order (DateTime moment, OrderStatus status, Client client)
         {
             Moment = moment;
             Status = status;
-        }
-
-        public Order (DateTime moment, OrderStatus status, OrderItem items)
-        {
-            Moment = moment;
-            Status = status;
-            Items.Add(items);
-        }
-
-        public Order(DateTime moment, OrderStatus status, Client client) : this(moment, status)
-        {
             Client = client;
         }
 
